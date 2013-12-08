@@ -1,0 +1,4 @@
+madesst_cs_rest:
+    resource: "@MadesstCSRestBundle/Resources/config/routing.yml"
+    prefix:   /api
+

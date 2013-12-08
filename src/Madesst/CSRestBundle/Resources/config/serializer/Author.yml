@@ -1,0 +1,25 @@
+Madesst\CsRestModelBundle\Model\Author:
+    exclusion_policy: ALL
+    access_type: public_method
+    virtual_properties:
+        getId:
+            type: integer
+            serialized_name: 'id'
+            expose: true
+        getFirstName:
+            type: string
+            serialized_name: 'first_name'
+            expose: true
+        getLastName:
+            type: string
+            serialized_name: 'last_name'
+            expose: true
+    relations:
+        - rel: 'self'
+          href:
+              route: madesst_cs_rest_author
+              parameters:
+                  id: expr(object.getId())
+        - rel: 'all'
+          href:
+              route: madesst_cs_rest_authors

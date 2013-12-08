@@ -1,0 +1,2 @@
+Madesst\CsRestModelBundle\Model\om\BaseAuthor:
+    exclusion_policy: ALL

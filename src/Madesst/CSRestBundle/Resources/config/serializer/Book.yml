@@ -1,0 +1,25 @@
+Madesst\CsRestModelBundle\Model\Book:
+    exclusion_policy: ALL
+    access_type: public_method
+    virtual_properties:
+        getId:
+            type: integer
+            serialized_name: 'id'
+            expose: true
+        getTitle:
+            type: string
+            serialized_name: 'title'
+            expose: true
+        getAuthor:
+            type: Madesst\CsRestModelBundle\Model\Author
+            serialized_name: 'author'
+            expose: true
+    relations:
+        - rel: 'self'
+          href:
+              route: madesst_cs_rest_book
+              parameters:
+                  id: expr(object.getId())
+        - rel: 'all'
+          href:
+              route: madesst_cs_rest_books

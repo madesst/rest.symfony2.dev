@@ -1,0 +1,14 @@
+PropelModelPager:
+    exclusion_policy: ALL
+    access_type: public_method
+    virtual_properties:
+        getResults:
+            type: array
+            serialized_name: 'results'
+            expose: true
+#    relations:
+#        - rel: 'self'
+#          href:
+#              route: madesst_cs_rest_author
+#              parameters:
+#                  id: expr(object.getId())

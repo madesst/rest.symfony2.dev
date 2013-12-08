@@ -1,0 +1,34 @@
+Madesst\CSRestBundle\Hateoas\PropelPagerWrapper:
+    exclusion_policy: ALL
+    access_type: public_method
+    virtual_properties:
+        getResults:
+            type: array
+            serialized_name: 'results'
+            expose: true
+    relations:
+        - rel: 'self'
+          href:
+              route: expr(object.getRoute())
+              parameters:
+                  page: expr(object.getCurrentPage())
+        - rel: 'first'
+          href:
+              route: expr(object.getRoute())
+              parameters:
+                  page: expr(object.getFirstPage())
+        - rel: 'last'
+          href:
+              route: expr(object.getRoute())
+              parameters:
+                  page: expr(object.getLastPage())
+        - rel: 'next'
+          href:
+              route: expr(object.getRoute())
+              parameters:
+                  page: expr(object.getNextPage())
+        - rel: 'prev'
+          href:
+              route: expr(object.getRoute())
+              parameters:
+                  page: expr(object.getPrevPage())

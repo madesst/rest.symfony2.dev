@@ -1,0 +1,28 @@
+madesst_cs_rest_books:
+    pattern:  /books
+    defaults: { _controller: MadesstCSRestBundle:Book:all, _format: ~ }
+    methods: GET
+
+madesst_cs_rest_book:
+    pattern:  /book/{id}
+    defaults: { _controller: MadesstCSRestBundle:Book:get, _format: ~ }
+    methods: GET
+    requirements:
+        id: "\d+"
+
+madesst_cs_rest_authors:
+    pattern:  /authors
+    defaults: { _controller: MadesstCSRestBundle:Author:all, _format: ~ }
+    methods: GET
+
+madesst_cs_rest_author:
+    pattern:  /author/{id}
+    defaults: { _controller: MadesstCSRestBundle:Author:get, _format: ~ }
+    methods: GET
+    requirements:
+        id: "\d+"
+
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /doc
